@@ -1,0 +1,35 @@
+@import "../../styles/shared.scss";
+
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;	
+		border-bottom: 1px solid $color-dbc-green;
+
+		.cell {
+			padding: 10px;
+		}
+
+		.name {
+			width: 20em;
+		}
+
+		.prios {
+			flex-grow: 1;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.note {
+			display: flex;
+		}
+
+    .vr {
+			margin: 10px;
+      border-right: 2px dotted $color-dbc-green;
+    }
+  }
+}

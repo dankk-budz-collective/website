@@ -1,0 +1,65 @@
+@import "../../styles/shared.scss";
+
+nav {
+  position: relative;
+  overflow: hidden;
+
+  z-index: 1;
+
+  height: 240px;
+
+  .ribbon {
+    height: 160px;
+
+    position: absolute;
+    top: 0;
+    left: -50px;
+    right: -50px;
+
+    &.left {
+      transform: rotate(-3deg);
+      background-color: $color-dbc-green;
+      vertical-align: bottom;
+    }
+
+    &.right {
+      transform: rotate(3deg);
+      background-color: rgba($color: $color-dbc-green, $alpha: 0.5);
+    }
+
+    .ribbon-content {
+      padding-left: 150px;
+      height: 90%;
+
+      display: flex;
+      align-items: flex-end;
+
+      a {
+        border: 2px dashed #eee;
+        color: #eee;
+        padding: 10px;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+
+      .dbc-name-text {
+        font-size: 72px;
+        line-height: 1em;
+        font-weight: bold;
+        text-shadow: 20px 10px 10px $color-gray;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+			.ribbon-content {
+				padding-left: 100px;
+				a {
+					display: none;
+				}
+        .dbc-name-text {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}

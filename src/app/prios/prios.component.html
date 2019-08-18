@@ -1,0 +1,21 @@
+<h1>Item Priorities EU (WIP)</h1>
+
+<div class="item-grid">
+	<div class="row" *ngFor="let prio of prios">
+		<div class="cell name">
+			{{ prio.item.name }}
+		</div>
+		<div class="vr"></div>
+		<div class="prios">
+			<div class="cell" *ngFor="let entry of prio.order">
+				{{ entry.value }}
+			</div>
+		</div>
+		<div *ngIf="prio.note" class="note">
+			<div class="vr"></div>
+			<div class="cell">
+				{{ prio.note }}
+			</div>
+		</div>
+	</div>
+</div>
