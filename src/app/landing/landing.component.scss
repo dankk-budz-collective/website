@@ -99,7 +99,18 @@
           background-image: url(../../assets/TS_Stacked_Light_CMYK.svg);
         }
       }
-    }
+		}
+
+		.youtube {
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+
+			iframe {
+				height: 240px;
+			}
+		}
   }
 }
 
