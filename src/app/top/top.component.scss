@@ -1,0 +1,35 @@
+.topten {
+  li {
+    &:nth-child(1) {
+      color: gold;
+      font-size: 4em;
+    }
+
+    &:nth-child(2) {
+      color: silver;
+      font-size: 3em;
+    }
+
+    &:nth-child(3) {
+      color: #cd7f32;
+      font-size: 2em;
+    }
+  }
+}
+
+.flag {
+  display: inline-block;
+	width: 60px;
+	height: 0.75em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.eu {
+    background-image: url(../../assets/Flag_of_Europe.svg);
+	}
+
+	&.na {
+		background-image: url(../../assets/Flag_of_the_United_States.svg);
+	}
+}

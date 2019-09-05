@@ -9,6 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LandingComponent } from './landing/landing.component';
 import { NewStuffComponent } from './new-stuff/new-stuff.component';
+import { TopComponent } from './top/top.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { NewStuffComponent } from './new-stuff/new-stuff.component';
 		NavigationComponent,
 		LandingComponent,
 		NewStuffComponent,
+		TopComponent,
 	],
 	imports: [
 		BrowserModule,
