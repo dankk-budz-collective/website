@@ -8,7 +8,7 @@
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
-		"deploy": "ng build --prod --baseHref=/dbc-landing/"
+		"deploy": "ng build --prod && firebase deploy"
 	},
 	"repository": {
 		"url": "https://github.com/dankk-budz-collective/website.git"
