@@ -1,25 +1,75 @@
-.topten {
-  li {
-    &:nth-child(1) {
-      color: gold;
-      font-size: 4em;
-    }
+.podium {
+	margin-top: 50px;
+	display: flex;
+	height: 180px;
+	justify-content: center;
+	align-items: flex-end;
 
-    &:nth-child(2) {
-      color: silver;
-      font-size: 3em;
-    }
+	li {
+		position: relative;
+		display: block;
+		width: 240px;
+		font-size: 2em;
+		text-align: center;
+		box-sizing: border-box;
 
-    &:nth-child(3) {
-      color: #cd7f32;
-      font-size: 2em;
-    }
-  }
+		&:nth-child(1) {
+			border: 5px solid gold;
+			background-color: rgba($color: gold, $alpha: 0.5);
+			color: gold;
+			order: 1;
+			align-self: stretch;
+
+			&:before {
+				content: "1";
+			}
+		}
+
+		&:nth-child(2) {
+			border: 5px solid silver;
+			background-color: rgba($color: silver, $alpha: 0.5);
+			color: silver;
+			order: 0;
+			height: 120px;
+
+			&:before {
+				content: "2";
+			}
+		}
+
+		&:nth-child(3) {
+			border: 5px solid #cd7f32;
+			background-color: rgba($color: #cd7f32, $alpha: 0.5);
+			color: #cd7f32;
+			order: 2;
+			height: 100px;
+
+			&:before {
+				content: "3";
+			}
+		}
+
+		&:before {
+			position: absolute;
+			top: -50px;
+			left: 0;
+			right: 0;
+		}
+
+		.winner {
+			line-height: 1.5em;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
 }
 
 .flag {
   display: inline-block;
-	width: 60px;
+	width: 1em;
 	height: 0.75em;
   background-size: contain;
   background-repeat: no-repeat;
