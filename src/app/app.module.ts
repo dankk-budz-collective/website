@@ -10,6 +10,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LandingComponent } from './landing/landing.component';
 import { NewStuffComponent } from './new-stuff/new-stuff.component';
 import { TopComponent } from './top/top.component';
+import { EuComponent } from './eu/eu.component';
+import { NaComponent } from './na/na.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { TopComponent } from './top/top.component';
 		LandingComponent,
 		NewStuffComponent,
 		TopComponent,
+		EuComponent,
+		NaComponent,
 	],
 	imports: [
 		BrowserModule,
