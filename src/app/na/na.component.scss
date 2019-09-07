@@ -1,0 +1,23 @@
+.container {
+	background: url(../../assets/Flag_of_the_United_States.svg) center / cover no-repeat;
+
+	display: flex;
+	justify-content: flex-end;
+
+	border-radius: 10px;
+
+	h1 {
+		background-color: rgba($color: #000000, $alpha: 0.85);
+		padding: 20px;
+		margin: 20px 10px 20px 20px;
+	}
+
+	.content {
+		flex-grow: 1;
+		margin: 20px 20px 20px 10px;
+
+		h2 {
+			margin-top: 0;
+		}
+	}
+}

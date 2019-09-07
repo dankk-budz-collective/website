@@ -1,24 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 @import "~normalize.css/normalize.css";
-@import '~csshake';
+@import "~csshake";
 @import "styles/shared.scss";
 
-
 body {
-	font-family: "Montserrat", sans-serif;
-	color: $color-white;
-	font-size: 18px;
-	line-height: 1.6em;
+  font-family: "Montserrat", sans-serif;
+  color: $color-white;
+  font-size: 18px;
+  line-height: 1.6em;
 }
 
-h1, h2, h3 {
-	line-height: 1.2em;
+h1,
+h2,
+h3 {
+  line-height: 1.2em;
 }
 
 hr {
-	border-color:$color-white;
-	border-style: dashed;
-	margin-top: 20px;
-	margin-bottom: 20px;
+  border-color: $color-white;
+  border-style: dashed;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+a,
+table,
+small {
+  display: block;
+}
+
+table {
+  td {
+    width: 50%;
+  }
+}
+
+ul {
+  list-style-position: inside;
+
+  a {
+    display: initial;
+    background: none;
+    padding: initial;
+    color: $color-white;
+  }
+}
+
+.discord {
+  height: 4em;
+
+  background: url(assets/Discord-Logo+Wordmark-Color.svg) center no-repeat;
+
+  &:hover {
+    background-image: url(assets/Discord-Logo+Wordmark-White.svg);
+  }
+}
+
+.teamspeak {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .ts-logo {
+    height: 4em;
+    width: 4em;
+
+    background: url(assets/TS_Stacked_BlueLight_CMYK.svg) center no-repeat;
+  }
+
+  &:hover {
+    .ts-logo {
+      background-image: url(assets/TS_Stacked_Light_CMYK.svg);
+    }
+  }
+}
+
+.youtube {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  iframe {
+    height: 240px;
+  }
+}
+
+.box {
+	background-color: rgba($color: #000000, $alpha: 0.85);
+	padding: 20px;
 }
