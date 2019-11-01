@@ -12,6 +12,7 @@ import { NewStuffComponent } from './new-stuff/new-stuff.component';
 import { TopComponent } from './top/top.component';
 import { EuComponent } from './eu/eu.component';
 import { NaComponent } from './na/na.component';
+import { MokesComponent } from './mokes/mokes.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { NaComponent } from './na/na.component';
 		TopComponent,
 		EuComponent,
 		NaComponent,
+		MokesComponent,
 	],
 	imports: [
 		BrowserModule,
