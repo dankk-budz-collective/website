@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.first,
+.second,
+.third {
+    position: absolute;
+    font-size: 128px;
+    right: 0;
+}
+
+.first {
+    color: navajowhite;
+    top: 0;
+    left: 0;
+
+    animation: spin 690s linear infinite;
+}
+
+.second {
+    color: darkturquoise;
+    mix-blend-mode: darken;
+    top: 20px;
+    left: 10px;
+
+    animation: spin 450s linear infinite reverse;
+}
+
+.third {
+    color: #189034;
+    mix-blend-mode: color-burn;
+    top: 40px;
+    top: 20px;
+
+    animation: spin 180s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg);}}
