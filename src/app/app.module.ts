@@ -13,6 +13,7 @@ import { TopComponent } from './top/top.component';
 import { EuComponent } from './eu/eu.component';
 import { NaComponent } from './na/na.component';
 import { MokesComponent } from './mokes/mokes.component';
+import { DkpComponent } from './dkp/dkp.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MokesComponent } from './mokes/mokes.component';
 		EuComponent,
 		NaComponent,
 		MokesComponent,
+		DkpComponent,
 	],
 	imports: [
 		BrowserModule,
