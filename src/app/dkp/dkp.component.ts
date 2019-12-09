@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { MonDkpConverterService } from '../services/mon-dkp-converter.service';
 import { MonDkpImportService } from '../services/mon-dkp-import.service';
-import { DKPRecord } from '../services/mon-dkp.models';
+import { DKPRecord, LootRecord, DKPHistoryRecord } from '../services/mon-dkp.models';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-dkp',
@@ -11,10 +11,14 @@ import { Observable } from 'rxjs';
 export class DkpComponent implements OnInit, AfterViewInit {
   @ViewChild('html', { static: false }) elementRef: ElementRef;
   public monDkpData: Observable<DKPRecord[]>;
+  public monLootData: Observable<LootRecord[]>;
+  public monDkpHistoryData: Observable<DKPHistoryRecord[]>;
   constructor( private monDkpImportService : MonDkpImportService) { }
 
   ngOnInit() {
     this.monDkpData = this.monDkpImportService.getDkpRecords();
+    this.monLootData = this.monDkpImportService.getLootRecords();
+    this.monDkpHistoryData = this.monDkpImportService.getHistoryRecords();
   }
 
   ngAfterViewInit(): void {

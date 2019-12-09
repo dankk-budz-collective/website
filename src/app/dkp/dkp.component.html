@@ -57,25 +57,26 @@ html { background-color: #000; };
          <div class="divClassHeader" style="width: 4%;">DKP</div>
          <div class="divDKPHeader">Date/Reason</div>
       </div>
-      <div class="divTableRow">
-         <div class="divPlayer" style="font-size: 0.7em; width: 71%;">Aaddaamm, Aeric, Ageca, Aintnosnitch, Albingran, Alkharius, Appendix, Arlyn, Aseth, Azirafil, Babypanda, Barten, Beats, Beist, Bigdiesel, Bigtittygoth, Bloontede, Bloopi, Bogdabot, Bogg, Bonecollecta, Boost, Botnet, Brap, Bronker, Brosiebank, Budzbank, Budzdank, Budzshekel, Bullafaseth, Bulldoseur, Bóbbydazzler, Calirage, Cephei, Cepheibank, Cephi, Chairman, Chezz, Christianity, Chûcky, Ciggie, Clawflow, Communistboy, Cr, Crin, Cuteandfunny, Dagga, Danked, Darkheaven, Dce, Demure, Demøn, Dethox, Dethoxbank, Diktys, Divination, Divoodoo, Dkuzz, Doken, Dokenbank, Dragnlyte, Dropq, Dtxbank, Dtxmeme, Duveltje, Elchupacabra, Elmerfjot, Enclave, Eremus, Evga, Evool, Felpaperr, Finalflash, Flintar, Fonshve, Forgh, Foshi, Freshprincex, Fronky, Fug, Fugazii, Gacha, Gamers, Gamerword, Geostorm, Getscared, Gibble, Gloxinia, Gnarriz, Goldnose, Gracewrath, Grebz, Grímlock, Hagge, Haggeh, Hali, Hauru, Heimerstorm, Highstalker, Hofman, Horghagen, Hunt, Iceon, Iforted, Igoonsquad, Informer, Jefee, Jerak, Judãs, Jäegr, Kalaus, Kauas, Kea, Kewt, Knotsy, Kole, Komendo, Komposten, Kooj, Kosmos, Kratros, Kriviq, Krueger, Kushdo, Labor, Lakii, Layerabuse, Leeroygankin, Legendreborn, Lekoz, Lionus, Liveleak, Lnd, Loa, Lockpiep, Lombank, Lucilde, Luminis, Mageanderson, Magibro, Marsifat, Mathilbuild, Mehow, Modestlogan, Molbank, Molen, Mollock, Mordanzibel, Morningdelay, Morter, Murkz, Muur, Mäktigt, Nadeshiko, Nalta, Naput, Nattyhoard, Neaf, Negore, Nel, Nelom, Neqzie, Nikolija, Niwo, Niwolos, Nozumi, Nymphshe, Oleivar, Oligarch, Onetankyboi, Oni, Ooc, Oopsie, Oppsie, Orcro, Osaifh, Outofcontrol, Pallormortis, Paperr, Parsnippie, Phobic, Pieperke, Pieperkee, Portslave, Pulsar, Pwnzy, Qhalrinn, Qu, Reasonable, Recna, Redead, Riffraff, Riseup, Roskvist, Ryjuk, Saraytakla, Serbianbull, Shekeler, Shekelmaster, Shocka, Shogeki, Sikki, Sinkki, Skillzmfg, Sminem, Smolbrain, Smrkz, Smrkzdru, Smrkzrog, Snyxx, Socro, Solaine, Solitz, Sorrybro, Spagetteh, Sqde, Sqnk, Stary, Stefftwo, Stenny, Stration, Supamage, Sylferenc, Tastykul, Teodoros, Terbeth, Theben, Tooths, Trollback, Truckle, Turaga, Turnippie, Tyagosilva, Unchained, Vaastrih, Vesilia, Vinegar, Vinxzy, Viteloek, Woopsie, Wunderwaffe, Wwf, Xerxey, Xestikas, Yiff, Zahzwar, Zahzz, Zairo, Zandred, Zartred, Zeno, Zhiko, Zil, Zileo, Zileoh, Zinder, Zubbs, Zydrone, </div>
-         <div class="divClass" style="width: 4%;">-10%</div>
-         <div class="divDKP" style="width: 25%; font-size: 0.7em;">Weekly Decay<br />(11/13/19 11:35:16) </div>
+      <div class="divTableRow" *ngFor="let histItem of monDkpHistoryData | async">
+         <div class="divPlayer" style="font-size: 0.7em; width: 71%;">{{histItem.players}}</div>
+         <div class="divClass" style="width: 4%;">{{histItem.dkp}}</div>
+         <div class="divDKP" style="width: 25%; font-size: 0.7em;">{{histItem.reason}}<br />({{histItem.dateEpoch}}) </div>
       </div>
    </div>
 </div>
 </div>
-<div id="LootHistory" class="tab" style="display:none;"><div class="divTable" style="width: 50%;border: 1px solid #000;">
+<div id="LootHistory" class="tab" style="display:none;">
+   <div class="divTable" style="width: 50%;border: 1px solid #000;">
    <div class="divTableBody">
       <div class="divTableRow">
          <div class="divPlayerHeader">Loot</div>
          <div class="divClassHeader">Player</div>
          <div class="divDKPHeader">From</div>
       </div>
-      <div class="divTableRow">
-         <div class="divPlayer" style="width: 40%;"><a href="https://classic.wowhead.com/item=18422" data-wowhead="item=18422"></a> (44 DKP)</div>
-         <div class="divClass" style="width: 20%;">Lionus</div>
-         <div class="divDKP" style="width: 40%; font-size: 0.7em;">Onyxia's Lair: Onyxia<br />(11/11/19 10:23:03) </div>
+      <div class="divTableRow" *ngFor="let lootItem of monLootData | async">
+         <div class="divPlayer" style="width: 40%;"><a href="https://classic.wowhead.com/item={{lootItem.itemNumber}}">{{lootItem.itemName}}</a>({{lootItem.cost}})</div>
+         <div class="divClass" style="width: 20%;">{{lootItem.player}}</div>
+         <div class="divDKP" style="width: 40%; font-size: 0.7em;">{{lootItem.zone}}: {{lootItem.boss}}<br />({{lootItem.date}}) </div>
       </div>
    </div>
 </div>

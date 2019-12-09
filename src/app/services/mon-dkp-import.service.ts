@@ -46,18 +46,29 @@ export class MonDkpImportService {
    private errorMgmt(error) {
     console.log(error)
   }
+  private getLatestUpload() : Observable<MonDKPUpload[]>{
+    return this.db.list<MonDKPUpload>('dkp-uploads', ref => ref.orderByKey().limitToLast(1)).valueChanges();
+  }
   public getDkpRecords() : Observable<DKPRecord[]>{
-    var upload = this.db.list<DKPRecord>('dkp-uploads', ref => ref.orderByKey().limitToLast(1)).valueChanges()
+    var upload = this.getLatestUpload();
     //orderByKey sorts in ascending order. Therefore we use limittoLast 1 and take the first element afterwards. 
     return upload.pipe<any>(
       map(x=>x[0]["dkpData"])
     );
   }
-  public getHistoryRecords(){
-
+  public getHistoryRecords(): Observable<DKPHistoryRecord[]>{
+    var upload = this.getLatestUpload();
+    //orderByKey sorts in ascending order. Therefore we use limittoLast 1 and take the first element afterwards. 
+    return upload.pipe<any>(
+      map(x=>x[0]["dkpHistoryData"])
+    );
   }
-  public getLootRecords(){
-
+  public getLootRecords(): Observable<LootRecord[]>{
+    var upload = this.getLatestUpload();
+    //orderByKey sorts in ascending order. Therefore we use limittoLast 1 and take the first element afterwards. 
+    return upload.pipe<any>(
+      map(x=>x[0]["lootData"])
+    );
   }
   
 }
