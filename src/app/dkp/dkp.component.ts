@@ -1,5 +1,8 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-
+import { MonDkpConverterService } from '../services/mon-dkp-converter.service';
+import { MonDkpImportService } from '../services/mon-dkp-import.service';
+import { DKPRecord } from '../services/mon-dkp.models';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-dkp',
   templateUrl: './dkp.component.html',
@@ -7,10 +10,11 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angula
 })
 export class DkpComponent implements OnInit, AfterViewInit {
   @ViewChild('html', { static: false }) elementRef: ElementRef;
-
-  constructor() { }
+  public monDkpData: Observable<DKPRecord[]>;
+  constructor( private monDkpImportService : MonDkpImportService) { }
 
   ngOnInit() {
+    this.monDkpData = this.monDkpImportService.getDkpRecords();
   }
 
   ngAfterViewInit(): void {

@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +17,8 @@ import { EuComponent } from './eu/eu.component';
 import { NaComponent } from './na/na.component';
 import { MokesComponent } from './mokes/mokes.component';
 import { DkpComponent } from './dkp/dkp.component';
+import { environment } from 'src/environments/environment';
+
 
 
 @NgModule({
@@ -29,11 +34,14 @@ import { DkpComponent } from './dkp/dkp.component';
 		NaComponent,
 		MokesComponent,
 		DkpComponent,
+	
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		AngularFireModule.initializeApp(environment.firebase),
+    	AngularFireDatabaseModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
